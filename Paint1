@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class Paint1 {
+	private static Scanner scnr;
+    public static void main(String[] args) {
+        scnr = new Scanner(System.in);
+        double wallHeight = 0.0;
+        double wallWidth = 0.0;
+        double wallArea = 0.0;
+        double gallonsPaintNeeded = 0.0;
+        
+        final double squareFeetPerGallons = 350.0;
+        
+        // Implement a do-while loop to ensure input is valid
+        // Prompt user to input wall's height
+        while(true) {
+        System.out.println("Enter wall height (feet): ");
+        wallHeight = scnr.nextDouble();
+        if (wallHeight > 0) {
+        	break;
+        }
+        else {
+        	System.out.println("Enter a valid number...");
+        }
+     }
+
+        // Implement a do-while loop to ensure input is valid
+        // Prompt user to input wall's width
+        while(true) {
+            System.out.println("Enter wall width (feet): ");
+            wallWidth = scnr.nextDouble();
+            if (wallWidth > 0) {
+            	break;
+            }
+            else {
+            	System.out.println("Enter a valid number...");
+            }
+         }
+
+        // Calculate and output wall area
+        wallArea = wallHeight * wallWidth;
+        System.out.println("Wall area: " + wallArea + " square feet");
+
+        // Calculate and output the amount of paint (in gallons) needed to paint the wall
+        gallonsPaintNeeded = wallArea/squareFeetPerGallons;
+        System.out.println("Paint needed: " + gallonsPaintNeeded + " gallons");
+
+    }
+}
